@@ -18,6 +18,11 @@ class _Weather_PageState extends State<Weather_Page> {
   Weather? _weather;
 
 
+//fetch "weather"
+  _fetchWeather() async{
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold();
