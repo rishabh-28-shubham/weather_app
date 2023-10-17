@@ -50,7 +50,7 @@ class _Weather_PageState extends State<Weather_Page> {
               _weather?.City_Name?? "Loading city..."
             ),
             Text(
-              '${_weather?.Temperature}°C'
+              '${_weather?.Temperature.toStringAsFixed(1) ?? "Loading Temperature..."}°C'
             )
           ],
         ),
