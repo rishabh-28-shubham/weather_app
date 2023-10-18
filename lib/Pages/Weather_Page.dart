@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:weather_app/Services/weather_services.dart';
 import 'package:weather_app/model/weather_model.dart';
 
@@ -23,11 +24,12 @@ class _Weather_PageState extends State<Weather_Page> {
 
       // Get weather for the identified city
       final weather = await _weatherServices.Know_Weather(City_Name);
-
       setState(() {
         _weather = weather;
       });
-    } catch (e) {
+    }
+    //catch errors
+    catch (e) {
       print(e);
     }
   }
@@ -46,12 +48,12 @@ class _Weather_PageState extends State<Weather_Page> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            //city name
             Text(
               _weather?.City_Name?? "Loading city..."
             ),
-            Text(
-              '${_weather?.Temperature.toStringAsFixed(1) ?? "Loading Temperature..."}°C'
-            )
+            //temperature 
+            Text('${_weather?.Temperature.round()}°C')
           ],
         ),
       ),

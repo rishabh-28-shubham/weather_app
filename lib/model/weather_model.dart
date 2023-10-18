@@ -1,8 +1,8 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 
 class Weather {
   final String City_Name;
-  final Double Temperature;
+  final double Temperature;
   final String Main_Condition;
 
   //calling a constructor
@@ -16,7 +16,7 @@ class Weather {
   factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(
         City_Name: json['name'],
-        Temperature: json['main']['temp'].toDouble(),
+        Temperature: json['main']['temp'].todouble(),
         Main_Condition: json['weather'][0]['main']
       );
   }
